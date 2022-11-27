@@ -1,0 +1,48 @@
+{% extends 'community/base.html' %}
+{% load static %}
+
+
+{% block content%}
+
+<body>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'Images/travel.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'Images/salon.png' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'Images/food.jpg' %}" class="d-block w-100" alt="..." style="width:50%">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!-- <div class="gl-banner-item item">
+        <img src="{% static 'Images/service.jpeg' %}" style="width:100%">
+    </div> -->
+
+    <!-- <figure class="figure">
+        <img src="{% static 'Images/home.jpg' %}"  style="width:50%" class="figure-img img-fluid rounded" alt="invalid ">
+        <figcaption class="figure-caption"><a href="ServicesName/{{item.id}}" >{{item.Service_list}}</a></figcaption>
+      </figure> -->
+      
+    {% for item in list %}
+    <div class="list-group-item list-group-item-primary">
+        <a href="ServiceCategory/{{item.id}}" class="g-col-4">{{item.Service}}</a>
+
+    </div>
+    {% endfor %}
+ 
+    <a href="{% url 'ServiceList' %}"   style="font-size :25px;text-decoration:none">Click here to see all services...</a>
+
+</body>
+{% endblock %}

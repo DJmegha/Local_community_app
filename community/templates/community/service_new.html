@@ -1,0 +1,10 @@
+{% extends 'community/base.html' %}
+
+{% block content %}
+ <h3>Add new Service provider</h3>
+ <form method="POST">
+    {% csrf_token %}
+    {{ form_data.as_p}}
+    <button  type="submit" class="btn btn-secondary">Save</button>
+ </form>
+{% endblock %}

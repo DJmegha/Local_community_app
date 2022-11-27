@@ -1,0 +1,87 @@
+{% extends 'community/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="card"  style="width: 40rem;margin-left: 100px;margin-top: 10px;">
+  <img src="{{ data.Cover_img.url }}" alt="invalid image" style="width:50%">
+  <div class="card-body" >
+    id:<h4>{{ data.Service_provider_id}}</h4>
+    Service provider:<h4>{{ data.Service_provider}}</h4>
+    Price:<h3 class="mb-1">{{data.Price}}</h3>
+    Contact details:<h3 class="mb-1"> {{data.Contact_no}}</h3>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<!-- </div class="detail">
+<div class="card text-bg-dark">
+  <img src="{% static 'Images/travel.jpg' %}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{ data.Service_provider}}</</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  </div>
+</div> -->
+
+
+
+<!-- comment -->
+<div class="container">
+  <h2> Comments</h2>
+  <form action="/postComment/{{ data.pk }}/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleInputEmail1">Post Comment </label>
+        <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+    </div>
+    <input type="text" name="Service_provider_id" value="{{ data.pk }}">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+ {% for comment in comment %}
+<div class="row my-3">
+    <div class="col-md-1  ">
+    <img class="rounded mx-auto d-block w-100 p-2" src="#"  alt="user">
+    </div>
+    <div class="col-md-11 "> 
+    <b> {{comment.User}} </b> at {{comment.timestamp}}
+    <div>{{comment.comment}} </div>
+    </div>
+
+{% endfor %} 
+{%endblock%}
+
+  <!-- {% for comment in comment %}
+<div class="row my-3">
+    <div class="col-md-1  ">
+    <img class="rounded mx-auto d-block w-100 p-2" src="#"  alt="user">
+    </div>
+    <div class="col-md-11 "> 
+    <b> {{comment.User}} </b> at {{comment.timestamp}}
+    <div>{{comment.comment}} </div>
+    
+    <div>megha </div>
+</div>
+</div>
+{% endfor %} -->
+
+  
+    <!-- {% for comment in Comment %}
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-2"> 
+          <img src="" alt="" class="src">
+        </div>
+      <div class="col-8">Comment here</div>
+        <div>{{Comment.User.username}}</div>
+        <div>{{Comment.Timestamp}}</div>
+        <div>{{Comment.comment}}</div>
+     </div>
+  
+      </div>
+       
+    {% endfor %} -->
+  
+  <!-- comment -->
+  
+

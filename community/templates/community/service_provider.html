@@ -1,0 +1,38 @@
+{% extends 'community/base.html' %}
+
+{% block content%}
+
+    
+    
+    {% for item in info %}
+    <div class="list-group" enctype="multipart/form-data">
+     
+      
+      <a href="../../ServiceDetail/{{item.id}}">{{item.Service_provider}}</a>
+        
+        <!-- <a href="{% url 'ServiceDetail' pk=item.pk %}" class="mb-1"></a>{{item.Service_provider}}</a> -->
+            
+         
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+          <div class="d-flex w-100 justify-content-between">
+         
+          </div>
+         
+         
+         
+        </a>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

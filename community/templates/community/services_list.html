@@ -1,0 +1,16 @@
+
+{% extends 'community/base.html' %}
+{% load static %}
+
+{% block content%}
+{% for item in list %}
+<div class="list-group-item list-group-item-primary">
+    <a href="ServiceCategory/{{item.id}}" class="list-group-item list-group-item-action active">{{item.Service}}</a>
+   
+  </div>
+{% endfor %}
+{%endblock%}
+ 
+
+
+

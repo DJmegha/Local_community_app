@@ -1,0 +1,24 @@
+{% extends 'community/base.html' %}
+
+{% block content%}
+
+    
+    
+
+    {% for item in data %}
+    <div class="list-group-item list-group-item-primary">
+        <a href="../../ServiceProvider/{{item.id}}" class="list-group-item list-group-item-action active">{{item.Category}}</a>
+       
+      </div>
+
+  
+
+    {% endfor %}
+  
+{% endblock %}
+
+
+
+
+
+
